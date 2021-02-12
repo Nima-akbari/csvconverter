@@ -20,7 +20,6 @@ else {
 };
 
 settings1 = {
-licenseKey: 'non-commercial-and-evaluation',
 data: people,
 beforeChange: function (changes, source) {
 for (var i = changes.length - 1; i >= 0; i--) {
@@ -39,6 +38,7 @@ for (var i = changes.length - 1; i >= 0; i--) {
     }
   }
 }
+licenseKey: 'non-commercial-and-evaluation'
 },
 afterChange: function (changes, source) {
 if (source !== 'loadData') {
@@ -58,7 +58,9 @@ columns: [
 {data: 'groupidenfier'},
 {data: 'groupuuid'}
 ],
-minSpareRows: 1
+minSpareRows: 1,
+licenseKey: 'non-commercial-and-evaluation'
+
 };
 var hot = new Handsontable(example1, settings1);
 
