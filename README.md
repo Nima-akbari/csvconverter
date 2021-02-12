@@ -1,8 +1,12 @@
-# CSV Viewer Online [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+# Project CSV Website
+https://projectcsv.github.io/
 
-### [https://limonte.github.io/csv-viewer-online/](https://limonte.github.io/csv-viewer-online/)
+This is the respository for the Project CSV website/web app.
 
-### Used plugins:
 
-- [PapaParse](https://github.com/mholt/PapaParse) for parsing CSV
-- [handsontable](https://github.com/handsontable/handsontable) for showing the parsed data as a spreadsheet
+
+![](https://raw.githubusercontent.com/projectcsv/Project-CSV-Resources/master/projectcsv.png)
+
+Project CSV is a set of open source tools, released under the GNU GPL version 3, that provide
+an easy way to view and edit [.csv files](https://en.wikipedia.org/wiki/Comma-separated_values)
+on both desktop and on the web.
