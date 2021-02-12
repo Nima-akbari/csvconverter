@@ -2,7 +2,7 @@
 
 var INTRO = 13
 
-var input = document.getElementById('url-input')
+var input = document.getElementById('input-file')
 var load = document.getElementById('load-button')
 var save = document.getElementById('save-button')
 
