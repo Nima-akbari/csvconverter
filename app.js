@@ -1,8 +1,17 @@
 var container1 = document.getElementById('example1');
 var hot1 = new Handsontable(container1, {
-  data: Handsontable.helper.createSpreadsheetData(7, 7),
-  colHeaders: true,
-  rowHeaders: true
+  data: [],
+  dataSchema: {id: null, name: {first: null, last: null}, address: null},
+  startRows: 5,
+  startCols: 4,
+  colHeaders: ['ID', 'First Name', 'Last Name', 'Address'],
+  columns: [
+    {data: 'id'},
+    {data: 'name.first'},
+    {data: 'name.last'},
+    {data: 'address'}
+  ],
+  minSpareRows: 1
 });
 var button1 = document.getElementById('export-file');
 var exportPlugin1 = hot1.getPlugin('exportFile');
