@@ -65,7 +65,7 @@ licenseKey: 'non-commercial-and-evaluation'
 var hot = new Handsontable(example1, settings1);
 
 var button1 = document.getElementById('export-file');
-var exportPlugin1 = hot1.getPlugin('exportFile');
+var exportPlugin1 = hot.getPlugin('exportFile');
 
 button1.addEventListener('click', function() {
   exportPlugin1.downloadFile('csv', {
