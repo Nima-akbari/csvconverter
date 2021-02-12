@@ -4,7 +4,7 @@ var hot1 = new Handsontable(container1, {
   dataSchema: {id: null, name: {first: null, last: null}, address: null},
   startRows: 5,
   startCols: 4,
-  colHeaders: ['ID', 'First Name', 'Last Name', 'Address'],
+  colHeaders: ['First Name', 'Last Name', 'Address'],
   columns: [
     {data: 'id'},
     {data: 'name.first'},
