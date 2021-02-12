@@ -1,240 +1,30 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129416949-1"></script>
-  <script> window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-129416949-1');
-  </script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- PAGE settings -->
-  <link rel="icon" href="assets/app/icon32.ico">
-  <title>Qwil Messenger - Safe and Compliant Client Chat for your Business</title>
-  <meta name="description" content="Our single app makes chat safe and GDPR compliant when it matters most: between staff, clients and other businesses. Instantly deploy your own secure, branded chat service and meet the most stringent security and data privacy regulations globally.">
-  <meta name="keywords" content="Qwil, Qwil Messenger, Client Chat, Business Chat, Compliant, Secure, Quill, Safe Chat, GDPR, GDPR Chat,  Mobile, Web">
-  <!-- CSS dependencies -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="aquamarine.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
-  <!-- Script: Make my navbar transparent when the document is scrolled to top -->
-  <script src="js/navbar-ontop.js"></script>
-  <!-- Script: Animated entrance -->
-  <script src="js/animate-in.js"></script>
-  <script type="text/javascript">
-    var submitted = false;
-  </script>
-  <script> (function(){
-
-    window.ldfdr = window.ldfdr || {};
-    (function(d, s, ss, fs){
-      fs = d.getElementsByTagName(s)[0];
-
-      function ce(src){
-        var cs  = d.createElement(s);
-        cs.src = src;
-        setTimeout(function(){fs.parentNode.insertBefore(cs,fs)}, 1);
-      }
-
-      ce(ss);
-    })(document, 'script', 'https://lftracker.leadfeeder.com/lftracker_v1_kn9Eq4RzNYK4RlvP.js');
-  })();
-</script>
+  <title>CSV GitHub Editor</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 
-<body><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)  {window.location='https://www.qwil.io/success.html';}"></iframe>
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <!-- Navbar -->
-  <!-- Cover -->
-  <div class="pt-5 section-parallax bg-light text-center"> div class="container"&gt; <div class="row">
-      <div class="col-md-8 text-center controls">
-        <p class="basic-cs">
-          <button class="styleless" id="basic-controls-toggle">
-            <b>Basic CSV Settings</b>
-            <i class="material-icons" id="basic-controls-display">arrow_drop_down</i>
-          </button>
-        </p>
-        <!--                    Basic Controls                  -->
-        <div id="basic-controls">
-          <form>
-            <div class="form-group">
-              <label for="upload">Select .csv files:</label>
-              <input class="btn btn-default" id="upload" type="file" accept=".csv" name="files[]" size="30" multiple="multiple">
-            </div>
-            <div class="form-group">
-              <label for="first-row-header">Make first row column headers:</label>
-              <input id="first-row-header" type="checkbox" name="fr-headers" checked=""><br>
-            </div>
-            <div class="form-group">
-              <label for="first-row-include">Include first row along with colum headers:</label>
-              <input id="first-row-include" type="checkbox" name="fr-include"><br>
-            </div>
-          </form>
-          <button id="go" class="btn btn-primary">Go!</button>
-          <br><br>
-        </div>
-      </div>
-      <div class="col-md-3 text-center controls">
-        <p class="advanced-cs">
-          <button class="styleless" id="advanced-controls-toggle">
-            <b>Advanced CSV Settings</b>
-            <i class="material-icons" id="advanced-controls-display">arrow_drop_down</i>
-          </button>
-        </p>
-        <!--                  Advanced Controls                 -->
-        <div id="advanced-controls">
-          <form>
-            <div class="form-group">
-              <label for="encoding">Encoding:</label>
-              <select id="encoding" name="encoding">
-                <option value="UTF-8">UTF-8</option>
-                <option value="UTF-16">UTF-16</option>
-                <option value="ISO-8859-1">ISO-8859-1</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="column-separator">Column separator</label>
-              <select id="column-separator" name="column-separator">
-                <option value=",">Comma (,)</option>
-                <option value=";">Semi-colon (;)</option>
-                <option value=":">Colon (:)</option>
-                <option value="|">Bar (|)</option>
-                <option value="^">Caret (^)</option>
-                <option value=" ">Space ( )</option>
-                <option value=".">Period (.)</option>
-                <option value="-">Dash (-)</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="max-rows">Max rows:</label>
-              <input id="max-rows" type="number" name="max-rows" min="0" value="0">
-            </div>
-            <div class="form-group">
-              <label for="quotes">Treat quoted text as a single cell:</label>
-              <input id="quotes" type="checkbox" name="quotes" checked=""><br>
-            </div>
-            <br><br>
-          </form>
-        </div>
-      </div>
-    </div>
-    <!--                                Tables                      -->
-    <div class="tables text-center" id="tables">
-      <div class="text-center" id="instructions"></div>
-    </div>
+<body>
+  <div id="load-container">
+    GitHub raw URL:
+    <input type="text" id="url-input" size="85" zx/>
+    <button type="submit" id="load-button">Load</button>
   </div>
-  <!-- Article style section -->
-  <!-- Features -->
-  <b>
-    <b class="text-white">
-      <b class="text-white">
-        <!-- Features -->
-        <!-- Carousel reviews -->
-        <!-- Call to action -->
-        <div class="alert text-center cookiealert" role="alert"> We use cookies to give you the best experience on our website. <a class="text-light" href="cookie-policy.html" target="_blank">Learn more</a>
-          <button type="button" class="btn btn-primary btn-sm acceptcookies" aria-label="Close"> I agree </button>
-        </div>
-        <!-- Footer -->
-      </b>
-    </b>
-  </b>
-  <div class="bg-dark text-white py-4">
-    <div class="container">
-      <div class="row">
-        <div class="p-4 col-md-6" style="">
-          <h5 class="mb-4 text-light">Interested in learning more?</h5>
-          <p class="text-white">
-            <b>Send us a request for more details or to request a demo</b>
-          </p>
-          <a class="btn btn-outline-light text-center m-0" href="contact.html">Get in touch</a>
-        </div>
-        <div class="p-4 col-md-4" style="">
-          <h5 class="mb-4 text-light">Legal</h5>
-          <ul class="list-unstyled">
-            <a class="text-white" href="privacy-policy.html">
-              <b>Privacy policy</b>
-            </a>
-            <br>
-            <a href="terms-and-conditions.html" class="text-white">
-              <b>Terms &amp; conditions</b>
-            </a>
-            <br>
-            <a href="cookie-policy.html" class="text-white">
-              <b>Cookie policy</b>
-            </a>
-            <br>
-            <a href="master-subscription-agreement.html" class="text-white">
-              <b>Master subscription agreement</b>
-            </a>
-            <br>
-            <li><b><a href="anti_slavery_statement.html" class="text-light">Anti-slavery statement</a></b></li>
-          </ul>
-        </div>
-        <div class="p-4 col-md-2" style="">
-          <h5 class="mb-4 text-light">Follow us</h5>
-          <div class="col-12 col-md-12 m-0 p-0">
-            <a href="https://www.linkedin.com/company/qwilmessenger/" target="_blank">
-              <i class="fa d-inline mr-3 text-white fa-linkedin-square fa-2x"></i>
-            </a>
-            <a href="https://twitter.com/QwilMessenger" target="_blank">
-              <i class="fa fa-twitter d-inline text-white fa-2x"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12 mt-3">
-          <p class="text-center text-muted m-0">© Copyright 2020 - All rights reserved. </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
-    <div class="container">
-      <a href="index.html">
-        <img class="d-block" width="200" src="assets/app/logoheader.png"> </a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
-        <ul class="navbar-nav px-2">
-          <li class="nav-item mx-1">
-            <a class="nav-link" href="why-qwil.html">Why Qwil</a>
-          </li>
-          <li class="nav-item mx-1">
-            <a class="nav-link" href="about-us.html">About Us</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
-          <li class="nav-item mx-1">
-            <a class="nav-link" href="pricing.html">Pricing</a>
-          </li>
-          <li class="nav-item mx-1">
-            <a class="nav-link" href="case-studies.html">Resources</a>
-          </li>
-          <li class="nav-item mx-1">
-            <a class="nav-link" href="https://support.qwil.io">Help Centre</a>
-          </li>
-        </ul>
-        <a href="sign-in.html" class="btn btn-outline-light">
-          <i class="fa fa-user fa-fw"></i>&nbsp;Sign In</a>
-      </div>
-    </div>
-  </nav>
-  <!-- JavaScript dependencies -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"></script>
-  <!-- Script: Smooth scrolling between anchors in the same page -->
-  <script src="js/smooth-scroll.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
-  <script type="text/javascript">
-    document.getElementById('input_5').value = document.referrer;
-  </script>
-  <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=e9f6919a-4cd7-4e6e-93c7-3138ced4d427"> </script>
-</body>
 
-</html>
+  <div id="handsontable-container"></div>
+
+  <div id="save-container">
+    Personal GitHub token:
+    <input type="text" id="token-input" size="45" />
+    <button type="submit" id="save-button">Save</button>
+  </div>
+
+  <div id="console-container"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/handsontable@6.2.2/dist/handsontable.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@4.6.2/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-base64@2.5.0/base64.min.js"></script>
+  <script src="app.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable@6.2.2/dist/handsontable.full.min.css">
+</body>
