@@ -1,5 +1,5 @@
 var people = [
-  {name: {first: null, last: null}, phoneNumber: null, email: 'Joe.Fabiano@ex.com'}
+  {name: {first: 'Nima', last: 'Akbari'}, phoneNumber: '+447587173419', email: 'Joe.Fabiano@ex.com'}
 ],
 example1 = document.getElementById('example1'),
 example1console = document.getElementById('example1console'),
@@ -46,7 +46,7 @@ if (source !== 'loadData') {
 },
 rowHeaders: true,
 contextMenu: true,
-colHeaders: ['ID', 'First name', 'Last name', 'PhoneNumber', 'E-mail'],
+colHeaders: ['First name', 'Last name', 'PhoneNumber', 'E-mail'],
 columns: [
 {data: 'id', type: 'numeric'},
 {data: 'name.first'},
