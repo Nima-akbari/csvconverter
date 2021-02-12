@@ -46,7 +46,7 @@ if (source !== 'loadData') {
 },
 rowHeaders: true,
 contextMenu: true,
-colHeaders: ['First name', 'Last name', 'PhoneNumber', 'E-mail'],
+colHeaders: ['First Name', 'Last Name', 'Job Title', 'Identifier', 'Email', 'Phone Number','Group Identifiers','Group UUIDS'],
 columns: [
 {data: 'name.first'},
 {data: 'name.last'},
