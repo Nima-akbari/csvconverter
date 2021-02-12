@@ -8,3 +8,20 @@ var hot1 = new Handsontable(example, {
   rowHeaders: true,
   colHeaders: true
 });
+var button1 = document.getElementById('export-file');
+  var exportPlugin1 = hot1.getPlugin('exportFile');
+
+  button1.addEventListener('click', function() {
+    exportPlugin1.downloadFile('csv', {
+      bom: false,
+      columnDelimiter: ',',
+      columnHeaders: false,
+      exportHiddenColumns: true,
+      exportHiddenRows: true,
+      fileExtension: 'csv',
+      filename: 'Handsontable-CSV-file_[YYYY]-[MM]-[DD]',
+      mimeType: 'text/csv',
+      rowDelimiter: '\r\n',
+      rowHeaders: true
+    });
+  });
