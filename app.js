@@ -1,4 +1,6 @@
-var people = [],
+var people = [
+  {name: {first: null, last: null}, ip: '0.0.0.1', email: 'Joe.Fabiano@ex.com'}
+],
 example1 = document.getElementById('example1'),
 example1console = document.getElementById('example1console'),
 settings1,
