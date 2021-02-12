@@ -1,16 +1,11 @@
 var container1 = document.getElementById('example1');
 var hot1 = new Handsontable(container1, {
   data: [],
-  dataSchema: {id: null, name: {first: null, last: null}, name: null},
+  
   startRows: 5,
   startCols: 8,
   colHeaders: ['First Name', 'Last Name', 'Job Title', 'Identifier', 'Email', 'Phone Number','Group Identifiers','Group UUIDS'],
-  columns: [
-    {data: 'id'},
-    {data: 'name.first'},
-    {data: 'name.last'},
-    {data: 'address'}
-  ],
+
   minSpareRows: 1
 });
 var button1 = document.getElementById('export-file');
