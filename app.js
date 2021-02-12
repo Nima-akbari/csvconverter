@@ -1,13 +1,13 @@
 var people = [
-  {name: {first: null, last: null}, ip: '0.0.0.1', email: 'Joe.Fabiano@ex.com'}
+  {name: {first: null, last: null}, phoneNumber: null, email: 'Joe.Fabiano@ex.com'}
 ],
 example1 = document.getElementById('example1'),
 example1console = document.getElementById('example1console'),
 settings1,
-ipValidatorRegexp,
+phoneValidator,
 emailValidator;
 
-ipValidatorRegexp = /^(?:\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b|null)$/;
+phoneValidator = /^+^(?:\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b|null)$/;
 emailValidator = function (value, callback) {
 setTimeout(function(){
 if (/.+@.+/.test(value)) {
@@ -46,12 +46,12 @@ if (source !== 'loadData') {
 },
 rowHeaders: true,
 contextMenu: true,
-colHeaders: ['ID', 'First name', 'Last name', 'IP', 'E-mail'],
+colHeaders: ['ID', 'First name', 'Last name', 'PhoneNumber', 'E-mail'],
 columns: [
 {data: 'id', type: 'numeric'},
 {data: 'name.first'},
 {data: 'name.last'},
-{data: 'ip', validator: ipValidatorRegexp, allowInvalid: true},
+{data: 'phoneNumber', validator: phoneValidator, allowInvalid: true},
 {data: 'email', validator: emailValidator, allowInvalid: false}
 ],
 minSpareRows: 1
