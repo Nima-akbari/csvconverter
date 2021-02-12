@@ -48,7 +48,6 @@ rowHeaders: true,
 contextMenu: true,
 colHeaders: ['First name', 'Last name', 'PhoneNumber', 'E-mail'],
 columns: [
-{data: 'id', type: 'numeric'},
 {data: 'name.first'},
 {data: 'name.last'},
 {data: 'phoneNumber', validator: phoneValidator, allowInvalid: true},
