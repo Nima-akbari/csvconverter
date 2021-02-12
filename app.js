@@ -20,7 +20,7 @@ else {
 };
 
 settings1 = {
-licenseKey: 'non-commercial-and-evaluation'
+licenseKey: 'non-commercial-and-evaluation',
 data: people,
 beforeChange: function (changes, source) {
 for (var i = changes.length - 1; i >= 0; i--) {
