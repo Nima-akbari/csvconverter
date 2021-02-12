@@ -1,7 +1,6 @@
 var container1 = document.getElementById('example1');
 var hot1 = new Handsontable(container1, {
-  data: [],
-  colHeaders: ['ID', 'First Name', 'Last Name', 'Address'],
+  data: Handsontable.helper.createSpreadsheetData(7, 7),
   colHeaders: true,
   rowHeaders: true
 });
