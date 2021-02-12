@@ -1,31 +1,26 @@
-/* global FileReader, Papa, Handsontable */
+const container = document.getElementById('example');
+const hot = new Handsontable(container, {
+  data: getData()
+});
 
-//var input = document.getElementById('input-file')
-var input = 'ClientSample.csv'
-var handsontableContainer = document.getElementById('handsontable-container')
+// access to exportFile plugin instance
+const exportPlugin = hot.getPlugin('exportFile');
 
-input.onchange = function () {
-  var file = this.files[0]
-  var reader = new FileReader()
+// export as a string
+exportPlugin.exportAsString('csv');
 
-  reader.onload = function (e) {
-    var csv = e.target.result
-    var data = Papa.parse(csv, {
-      header: true,
-      skipEmptyLines: true
-    })
+// export as a blob object
+exportPlugin.exportAsBlob('csv');
 
-    // reset container
-    handsontableContainer.innerHTML = ''
-    handsontableContainer.className = ''
+// export to downloadable file (named: MyFile.csv)
+exportPlugin.downloadFile('csv', {filename: 'MyFile'});
 
-    Handsontable(handsontableContainer, {
-      data: data.data,
-      rowHeaders: true,
-      colHeaders: data.meta.fields,
-      columnSorting: true
-    })
-  }
-
-  reader.readAsText(file)
-}
+// export as a string (with specified data range):
+exportPlugin.exportAsString('csv', {
+  exportHiddenRows: true,     // default false
+  exportHiddenColumns: true,  // default false
+  columnHeaders: true,        // default false
+  rowHeaders: true,           // default false
+  columnDelimiter: ';',       // default ','
+  range: [1, 1, 6, 6]         // [startRow, endRow, startColumn, endColumn]
+});
