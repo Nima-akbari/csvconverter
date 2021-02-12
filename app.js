@@ -1,6 +1,7 @@
 var container1 = document.getElementById('example1');
 var hot1 = new Handsontable(container1, {
-  data: ['Tesla', 'Nissan', 'Toyota', 'Honda'],
+  data: []
+  colHeaders: ['ID', 'First Name', 'Last Name', 'Address'],
   colHeaders: true,
   rowHeaders: true
 });
