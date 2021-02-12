@@ -1,10 +1,8 @@
 var container1 = document.getElementById('example1');
 var hot1 = new Handsontable(container1, {
-  data: Handsontable.helper.createSpreadsheetData(7, 7),
+  data: ['Tesla', 'Nissan', 'Toyota', 'Honda'],
   colHeaders: true,
-  rowHeaders: true,
-  hiddenRows: { rows: [1, 3, 5], indicators: true },
-  hiddenColumns: { columns: [1, 3, 5], indicators: true }
+  rowHeaders: true
 });
 var button1 = document.getElementById('export-file');
 var exportPlugin1 = hot1.getPlugin('exportFile');
