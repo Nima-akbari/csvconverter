@@ -53,6 +53,7 @@ columns: [
 {data: 'name.last'},
 {data: 'ip', validator: ipValidatorRegexp, allowInvalid: true},
 {data: 'email', validator: emailValidator, allowInvalid: false}
-]
+],
+minSpareRows: 1
 };
 var hot = new Handsontable(example1, settings1);
