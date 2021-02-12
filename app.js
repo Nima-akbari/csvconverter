@@ -6,7 +6,6 @@ var hot1 = new Handsontable(container1, {
   startCols: 8,
   colHeaders: ['First Name', 'Last Name', 'Job Title', 'Identifier', 'Email', 'Phone Number','Group Identifiers','Group UUIDS'],
   columns: [
-    {data: 'id'},
     {data: 'name.first'},
     {data: 'name.last'},
     {data: 'job_title'},
