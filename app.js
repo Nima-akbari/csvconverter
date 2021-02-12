@@ -1,6 +1,6 @@
 var example = document.getElementById('example1');
 var hot1 = new Handsontable(example, {
-  data: Handsontable.helper.createSpreadsheetData(1000, 1000),
+  data: Handsontable.helper.createSpreadsheetData(7, 7),
   colWidths: 100,
   width: '100%',
   height: 320,
