@@ -1,5 +1,5 @@
 var people = [
-  {name: {first: 'Nima', last: 'Akbari'}, phoneNumber: '+447587173419', email: 'Joe.Fabiano@ex.com'}
+  {name: {first: null, last: null}, job_title: null, identifier: null, email: null, phoneNumber: null, groupidentifier: null, groupuuid: null}
 ],
 example1 = document.getElementById('example1'),
 example1console = document.getElementById('example1console'),
@@ -50,8 +50,12 @@ colHeaders: ['First name', 'Last name', 'PhoneNumber', 'E-mail'],
 columns: [
 {data: 'name.first'},
 {data: 'name.last'},
+{data: 'job_title'},
+{data: 'identifier'},
+{data: 'email', validator: emailValidator, allowInvalid: false},
 {data: 'phoneNumber', validator: phoneValidator, allowInvalid: true},
-{data: 'email', validator: emailValidator, allowInvalid: false}
+{data: 'groupidenfier'},
+{data: 'groupuuid'}
 ],
 minSpareRows: 1
 };
