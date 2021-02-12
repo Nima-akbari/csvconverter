@@ -1,27 +1,25 @@
-var example = document.getElementById('example1');
-var hot1 = new Handsontable(example, {
+var container1 = document.getElementById('example1');
+var hot1 = new Handsontable(container1, {
   data: Handsontable.helper.createSpreadsheetData(7, 7),
-  colWidths: 100,
-  width: '100%',
-  height: 320,
-  rowHeights: 23,
+  colHeaders: true,
   rowHeaders: true,
-  colHeaders: true
+  hiddenRows: { rows: [1, 3, 5], indicators: true },
+  hiddenColumns: { columns: [1, 3, 5], indicators: true }
 });
 var button1 = document.getElementById('export-file');
-  var exportPlugin1 = hot1.getPlugin('exportFile');
+var exportPlugin1 = hot1.getPlugin('exportFile');
 
-  button1.addEventListener('click', function() {
-    exportPlugin1.downloadFile('csv', {
-      bom: false,
-      columnDelimiter: ',',
-      columnHeaders: false,
-      exportHiddenColumns: true,
-      exportHiddenRows: true,
-      fileExtension: 'csv',
-      filename: 'Handsontable-CSV-file_[YYYY]-[MM]-[DD]',
-      mimeType: 'text/csv',
-      rowDelimiter: '\r\n',
-      rowHeaders: true
-    });
+button1.addEventListener('click', function() {
+  exportPlugin1.downloadFile('csv', {
+    bom: false,
+    columnDelimiter: ',',
+    columnHeaders: false,
+    exportHiddenColumns: true,
+    exportHiddenRows: true,
+    fileExtension: 'csv',
+    filename: 'Handsontable-CSV-file_[YYYY]-[MM]-[DD]',
+    mimeType: 'text/csv',
+    rowDelimiter: '\r\n',
+    rowHeaders: true
   });
+});
