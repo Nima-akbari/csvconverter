@@ -1,6 +1,7 @@
 /* global FileReader, Papa, Handsontable */
 
-var input = document.getElementById('input-file')
+//var input = document.getElementById('input-file')
+var input = 'ClientSample.csv'
 var handsontableContainer = document.getElementById('handsontable-container')
 
 input.onchange = function () {
