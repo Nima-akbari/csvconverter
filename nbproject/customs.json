@@ -1,0 +1,14 @@
+{
+    "elements": {},
+    "attributes": {
+        "integrity": {
+            "context": "link"
+        },
+        "size": {
+            "context": "input"
+        },
+        "for": {
+            "context": "input"
+        }
+    }
+}

@@ -1,9 +1,12 @@
-# CSV GitHub Editor
+# Project CSV Website
+https://projectcsv.github.io/
 
-An online CSV editor for GitHub files, somewhat inspired on [https://github.com/limonte/csv-viewer-online](https://github.com/limonte/csv-viewer-online).
+This is the respository for the Project CSV website/web app.
 
-Uses:
 
-- [PapaParse](https://github.com/mholt/PapaParse) for parsing CSV
-- [Handsontable](https://github.com/handsontable/handsontable) for showing the parsed data as a spreadsheet
-- [js-base64](https://github.com/dankogai/js-base64) for unicode Base64 encoding
+
+![](https://raw.githubusercontent.com/projectcsv/Project-CSV-Resources/master/projectcsv.png)
+
+Project CSV is a set of open source tools, released under the GNU GPL version 3, that provide
+an easy way to view and edit [.csv files](https://en.wikipedia.org/wiki/Comma-separated_values)
+on both desktop and on the web.
