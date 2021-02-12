@@ -1,3 +1,5 @@
+import Handsontable from "handsontable";
+import 'handsontable/dist/handsontable.full.css';
 var example = document.getElementById('example1');
 var hot1 = new Handsontable(example, {
   //ta: Handsontable.helper.createSpreadsheetData(1000, 1000),
