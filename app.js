@@ -7,7 +7,7 @@ settings1,
 phoneValidator,
 emailValidator;
 
-phoneValidator = /\+\d[\d]{8,15}\d/;
+phoneValidator = /\+\d[\d]{8,15}\d/g;
 emailValidator = function (value, callback) {
 setTimeout(function(){
 if (/.+@.+/.test(value)) {
