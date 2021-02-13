@@ -6,10 +6,10 @@
 
 <body>
   <p align="center">
-    <input type="file" id="input-file" accept=".csv">
+    <input type="file" id="input-file" accept=".csv" onclick="document.getElementById('export-file').style.display = 'block'; this.style.display = 'none';">>
   </p>
-  <div>
-    
+  
+   <div>
     <div id="example1" class="hot handsontable htRowHeaders htColumnHeaders"></div>
   </div>
   
