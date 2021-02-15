@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base href='https://bossanova.uk//templates/default/'>
+
+    <meta name='viewport' id="viewport" content='width=device-width,initial-scale=1,user-scalable=no' />
+    <meta name='format-detection' content = "telephone=no" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+
+    <meta itemprop="name" content="Jspreadsheet CE">
+    <meta itemprop="image" content="https://bossanova.uk/jspreadsheet/logo.png">
+    <meta itemprop="url" content="https://bossanova.uk/jspreadsheet">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Jspreadsheet CE">
+    <meta property="og:url" content="https://bossanova.uk/jspreadsheet">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:image" content="https://bossanova.uk/jspreadsheet/logo.png">
+
+    <meta name="google-site-verification" content="fNDemv4nALjUDIqXc7xPfHDEV24wtpD9xsEKLkTIYSk" />
+
+    <link rel="icon" href="https://bossanova.uk/jexcel/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Material+Icons" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap">
+
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+    <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+    <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.layout.css" type="text/css" />
+    <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.mobile.css" type="text/css" />
+
+    <script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel="stylesheet" href="css/code.css" type="text/css" />
+
+</head>
+<body>
+
+<div id='required'></div>
+
+<div>
+
+    <section class='top'>
+        <div class='row container middle'>
+            <div class='p4 row middle'>
+                <div id='logo'><a href="/" style="text-decoration:none;">
+<div class='p6 cursor'>
+<div class='logo-text'><span>Bossanova</span>
+<div class='logo-text-sub'>AMAZING OPEN SOURCE LIBRARIES</div></div> 
+</div>
+</a></div>
+                <div class='column p10 big-screen-only'>
+                    <a class="github-button" href="https://github.com/jspreadsheet/jexcel" data-size="large" data-show-count="true">Star</a>
+                </div>
+            </div>
+            <div id='top' class='top-menu big-screen-only'></div>
+        </div>
+    </section>
+
+    <section>
+        <div class='row container' style='flex-wrap:nowrap;'>
+
+                <div id='menu' class='column f1 big-screen-only' style='min-width: 260px; max-width: 260px;'><div class="section">
+<div class="section-content">
+
+<nav data-id="my-account">
+  <h2>Resources</h2>
+    <ul>
+        <li><a href='/jspreadsheet/v4/'>Latest CE Version</a></li>
+        <li><a href='https://jexcel.net'>Latest PRO Version</a></li>
+        <li><a href='https://jsuites.net'>jSuites</a></li>
+        <li><a href='https://lemonadejs.net'>LemonadeJS</a></li>
+    </ul>
+</nav>
+
+</div>
+</div>
+                </div><div class='column f3'>
+                    <div id='featured'></div>
+                    <div id='content'><div class="section">
+<div class="section-content">
+
+<h1>Bossanova</h1>
+
+<p>Bossanova website is a repository of open source JavaScript and PHP libraries.</p>
+
+<ul>
+    <li><a href='/jspreadsheet/v4/'>Jspreadsheet</a>: create amazing online spreadsheets.</li>
+    <li><a href='https://jsuites.net'>Jsuites</a>: a great colletion of responsive and lightweighed common web based components.</li>
+    <li><a href='https://lemonadejs.net'>LemonadeJS</a>: A simplified frontend micro library to create web based applications .</li>
+</ul>
+
+</div>
+</div></div>
+                </div>
+
+        </div>
+    </section>
+
+</div>
+
+<script type="text/javascript" src="https://jsuites.net/v4/jsuites.js"></script>
+<script type="text/javascript" src="https://jsuites.net/v4/jsuites.layout.js"></script>
+<script type="text/javascript" src="https://jsuites.net/v4/jsuites.mobile.js"></script>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100064619-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100064619-1');
+</script>
+
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"f9b5adf8223e3d5a8f575b0bb","lid":"37f97a936c","uniqueMethods":true}) })</script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/themes.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', app);
+</script>
+
+</body>
+</html>

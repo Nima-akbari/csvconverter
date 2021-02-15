@@ -1,17 +1,38 @@
-var data = [
-  ['Jazz', 'Honda', '2019-02-12', '', true, '$ 2.000,00', '#777700'],
-  ['Civic', 'Honda', '2018-07-11', '', true, '$ 4.000,01', '#007777'],
-];
+var app = (function() {
+    // Controllers
+    var controllers = {}; 
+    // Load menu
+    jSuites.menu(document.getElementById('menu'));
+    // Load page component
+    /*application = jSuites.app(content, {
+        onbeforecreatepage: function(instance, page) {
+            page.options.url = page.options.route; 
+        },
+        oncreatepage: function(instance, page, view) {
+            // Controller is defined
+            if (typeof(controllers[page.options.route]) == 'object') {
+                // Create the lemonade object
+                controllers[page.options.route].self = controllers[page.options.route].controller(obj, page);
+                // Append component 
+                lemonade.blender(view, controllers[page.options.route].self, page);
+                // Cancel default behavior
+                return false;
+            }
+        },
+        onloadpage: function() {
+            PR.prettyPrint();
+        },
+        detachHiddenPages: true,
+    });
 
-jspreadsheet(document.getElementById('spreadsheet'), {
-  data:data,
-  columns: [
-      { type: 'text', title:'Car', width:120 },
-      { type: 'dropdown', title:'Make', width:200, source:[ "Alfa Romeo", "Audi", "Bmw" ] },
-      { type: 'calendar', title:'Available', width:200 },
-      { type: 'image', title:'Photo', width:120 },
-      { type: 'checkbox', title:'Stock', width:80 },
-      { type: 'numeric', title:'Price', width:100, mask:'$ #.##,00', decimal:',' },
-      { type: 'color', width:100, render:'square', }
-   ]
+    // Initial onload scripts
+    var script = document.getElementsByTagName('script');
+    // Run possible inline scripts
+    for (var i = 0; i < script.length; i++) {
+        // Get type
+        var type = script[i].getAttribute('type');
+        if (type == 'text/loader') {
+            eval(script[i].text);
+        }
+    }*/
 });
