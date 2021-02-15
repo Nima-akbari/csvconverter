@@ -1,14 +1,253 @@
+<!DOCTYPE html>
 <html>
-<script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js"></script>
-<link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
-<script src="https://jsuites.net/v4/jsuites.js"></script>
-<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
- 
+<head>
+<base href='https://bossanova.uk//templates/default/'>
+<title>Load data from CSV or JSON or XLSX</title>
+<meta itemprop='title' property='og:title' name='title' content='Load data from CSV or JSON or XLSX'>
+<meta itemprop='author' property='og:author' name='author' content='Spreadsheet'>
+<meta itemprop='keywords' property='og:keywords' name='keywords' content='Jexcel, javascript, excel-like, spreadsheet, loading data, csv, json, xlsx.'>
+<meta itemprop='description' property='og:description' name='description' content='How to import data from an external CSV, json file or XLSX.'>
+
+    <meta name='viewport' id="viewport" content='width=device-width,initial-scale=1,user-scalable=no' />
+    <meta name='format-detection' content = "telephone=no" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+
+    <meta itemprop="name" content="Jspreadsheet CE">
+    <meta itemprop="image" content="https://bossanova.uk/jspreadsheet/logo.png">
+    <meta itemprop="url" content="https://bossanova.uk/jspreadsheet">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Jspreadsheet CE">
+    <meta property="og:url" content="https://bossanova.uk/jspreadsheet">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:image" content="https://bossanova.uk/jspreadsheet/logo.png">
+
+    <meta name="google-site-verification" content="fNDemv4nALjUDIqXc7xPfHDEV24wtpD9xsEKLkTIYSk" />
+
+    <link rel="icon" href="https://bossanova.uk/jexcel/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Material+Icons" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap">
+
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+    <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+    <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.layout.css" type="text/css" />
+    <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.mobile.css" type="text/css" />
+
+    <script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel="stylesheet" href="css/code.css" type="text/css" />
+
+</head>
+<body>
+
+<div id='required'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/jspreadsheet/v4/jexcel.css" type="text/css" />
+<script type="text/javascript" src="/jspreadsheet/v4/jexcel.js"></script></div>
+
+<div>
+
+    <section class='top'>
+        <div class='row container middle'>
+            <div class='p4 row middle'>
+                <div id='logo'><div class='logo'>
+    <i class='material-icons small-screen-only' style='margin-right:8px;' onclick="menu()">menu</i>
+    <div class='cursor'>
+        <div class='logo-text'>
+            <a href="/jspreadsheet/v4/" style="text-decoration:none;color:#777"><span>Jspreadsheet</span> <span style="color:#526e9a;">CE</span></a>
+            <div class='logo-text-sub'><a href="/jspreadsheet/v4/" style="text-decoration:none;color:#777">THE JAVASCRIPT SPREADSHEET</a></div>
+        </div>
+    </div>
+</div>
+</div>
+                <div class='column p10 big-screen-only'>
+                    <a class="github-button" href="https://github.com/jspreadsheet/jexcel" data-size="large" data-show-count="true">Star</a>
+                </div>
+            </div>
+            <div id='top' class='top-menu big-screen-only'><div><ul>
+    <li title="Documentation"><a href="/jspreadsheet/v4/docs"><i class='material-icons'>fingerprint</i>Docs</a></li>
+    <li title="Examples"><a href="/jspreadsheet/v4/examples"><i class='material-icons'>store</i>Examples</a></li>
+    <li title="Sponsors"><a href="/jspreadsheet/v4/sponsors"><i class='material-icons'>accessibility</i>Sponsors</a></li>
+    <li title="Contact"><a href="/jspreadsheet/v4/contact"><i class='material-icons'>alternate_email</i>Contact</a></li>
+    </ul>
+</div>
+
+</div>
+        </div>
+    </section>
+
+    <section>
+        <div class='row container' style='flex-wrap:nowrap;'>
+
+                <div id='menu' class='column f1 big-screen-only' style='min-width: 260px; max-width: 260px;'><div class="section">
+<div class="section-content">
+
+<nav data-id="my-account">
+  <h2>Resources</h2>
+
+  <div>
+  <h3>Learning Center</h3>
+  <ul>
+    <li><a href="https://jexcel.net/">Pro distribution</a></li>
+    <li><a href="https://github.com/jspreadsheet/jexcel">CE repository</a></li>
+    <li><a href="https://jsuites.net/">Jsuites</a></li>
+    <li><a href="https://lemonadejs.net/">LemonadeJS</a></li>
+  </ul>
+  </div>
+</nav>
+
+<nav data-id="learning-center">
+  <h2>Learning Center</h2>
+
+  <div>
+  <h3>Documentation</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/docs/getting-started" title="The fundamental of jExcel Spreadsheet">Getting started</a></li>
+    <li><a href="/jspreadsheet/v4/docs/programmatically-changes" title="Control your table via javascript">Programmatically changes</a></li>
+    <li><a href="/jspreadsheet/v4/docs/events" title="Control the interaction via callbacks">Handling events</a></li>
+    <li><a href="/jspreadsheet/v4/docs/special-formulas" title="List of special formulas and helpers">Special formulas</a></li>
+  </ul>
+
+  <h3>Other references</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/docs/quick-reference" title="List of all possible methods and events">Quick reference</a></li>
+    <li><a href="/jspreadsheet/v4/docs/most-common-questions-and-answers" title="Most common implementation questions">Most common questions</a></li>
+  </ul>
+  </div>
+</nav>
+
+<nav data-id="real-life-applications">
+  <h2>Real-life applications</h2>
+
+  <div>
+  <h3>Examples</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/cases/themes" title="jExcel color theme editor">Color theme editor</a></li>
+    <li><a href="/jspreadsheet/v4/cases/highcharts" title="jExcel and Highcharts">Integration with highcharts</a></li>
+    <li><a href="/jspreadsheet/v4/cases/project-management" title="Project management">Project management</a></li>
+    <li><a href="/jspreadsheet/v4/cases/food-store" title="Food store">Food store</a></li>
+    <li><a href="/jspreadsheet/v4/cases/data-persistance" title="Data persistance">Data persistance</a></li>
+  </ul>
+  </div>
+</nav>
+
+<nav data-id="examples">
+  <h2>Examples</h2>
+
+  <div>
+  <h3>Spreadsheet data</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/examples/create-from-table" title="Create from a HTML table">Create from a HTML table</a></li>
+    <li><a href="/jspreadsheet/v4/examples/import-data" title="Load data from CSV, JSON or XLSX">Importing data</a></li>
+    <li><a href="/jspreadsheet/v4/examples/headers" title="Header updates &amp; column dragging">Headers</a></li>
+    <li><a href="/jspreadsheet/v4/examples/nested-headers" title="Nested headers and headers update">Nested headers</a></li>
+  </ul>
+
+  <h3>Spreadsheet formulas</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/examples/spreadsheet-formulas" title="Include formulas in your table">Formulas</a></li>
+    <li><a href="/jspreadsheet/v4/examples/footers" title="Formulas on table footer">Formulas on table footer</a></li>
+  </ul>
+
+  <h3>Spreadsheet columns</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/examples/column-types" title="Calendar, dropdown, image, text, hidden, etc.">Column types</a></li>
+    <li><a href="/jspreadsheet/v4/examples/dropdown-and-autocomplete" title="Autocomplete, multiple and conditional">Advanced dropdown</a></li>
+    <li><a href="/jspreadsheet/v4/examples/date-and-datetime-picker" title="Advanced calendar usage">Date and datetime picker</a></li>
+    <li><a href="/jspreadsheet/v4/examples/image-upload" title="Embed images to your spreadsheet">Images</a></li>
+    <li><a href="/jspreadsheet/v4/examples/richtext-html-editor" title="HTML Editor type">Richtext column</a></li>
+  </ul>
+
+  <h3>Spreadsheet cells</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/examples/comments" title="Get or set cell comments">Cell comments</a></li>
+    <li><a href="/jspreadsheet/v4/examples/meta-information" title="Using meta information">Meta information</a></li>
+    <li><a href="/jspreadsheet/v4/examples/readonly" title="Readonly columns">Readonly</a></li>
+  </ul>
+
+  <h3>Spreadsheet integrations</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/examples/spreadsheet-webcomponent" title="Spreadsheet as a webcomponent">Webcomponent</a></li>
+    <li><a href="/jspreadsheet/v4/examples/react" title="Using jExcel with React">React Implementation</a></li>
+    <li><a href="/jspreadsheet/v4/examples/vue" title="Using jExcel with Vue">VUE Implementation</a></li>
+    <li><a href="/jspreadsheet/v4/examples/angular" title="Using jExcel with Angular">Angular Implementation</a></li>
+    <li><a href="/jspreadsheet/v4/examples/jquery" title="Using jExcel with Jquery">Jquery Implementation</a></li>
+  </ul>
+
+  <h3>Spreadsheet features</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/examples/spreadsheet-toolbars" title="Enable and customize the toolbars">Custom toolbars</a></li>
+    <li><a href="/jspreadsheet/v4/examples/tabs" title="Using tabs">Using tabs</a></li>
+    <li><a href="/jspreadsheet/v4/examples/datatables" title="Search and pagination like datatables">Search and pagination</a></li>
+    <li><a href="/jspreadsheet/v4/examples/column-filters" title="Column filters">Column filters</a></li>
+    <li><a href="/jspreadsheet/v4/examples/freeze-columns" title="Freeze columns">Freeze columns</a></li>
+    <li><a href="/jspreadsheet/v4/examples/merged-cells" title="How to merge cells">Merged cells</a></li>
+    <li><a href="/jspreadsheet/v4/examples/column-dragging" title="Column dragging">Column dragging</a></li>
+    <li><a href="/jspreadsheet/v4/examples/sorting" title="Sorting the spreadsheet columns">Sorting columns</a></li>
+    <li><a href="/jspreadsheet/v4/examples/contextmenu" title="Custom contextmenu">Custom Contextmenu</a></li>
+    <li><a href="/jspreadsheet/v4/examples/lazy-loading" title="Dealing with big spreadsheets">Lazy loading</a></li>
+    <li><a href="/jspreadsheet/v4/examples/table-overflow" title="Table overflow">Table overflow</a></li>
+    <li><a href="/jspreadsheet/v4/examples/translations" title="Internationalization">Translations</a></li>
+  </ul>
+
+  <h3>Spreadsheet features</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/examples/programmatically-updates" title="Update your table programmatically">Programmatically updates</a></li>
+    <li><a href="/jspreadsheet/v4/examples/table-style" title="Default CSS and programmatically style">Table Style</a></li>
+    <li><a href="/jspreadsheet/v4/examples/table-scripting" title="Customize the table using javascript">Table Scripting</a></li>
+    <li><a href="/jspreadsheet/v4/examples/events" title="Control the interaction via callbacks">Events</a></li>
+  </ul>
+  </div>
+</nav>
+
+<i class='material-icons small-screen-only close' onclick="menu()">close</i>
+
+
+</div>
+</div>
+                </div><div class='column f3'>
+                    <div id='featured'></div>
+                    <div id='content'><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
+<script type="text/javascript" src="/jspreadsheet/v3/xlsx.js"></script>
+
+<div class="section">
+<div class="section-content">
+
+<div class='breadcrumb'><a href='/jspreadsheet/v4/examples' title='Back to the examples section'>Back to Examples</a></div>
+
+<h1>Create a javascript spreadsheet</h1>
+
+<p>There are a few different ways to load data to your javavascript spreadsheet shown in the next four examples below</p>
+
+<br>
+
+<div class="section-divisor">
+    <div class="section-number">1</div> <div class="section-title"><h2>Based on a external CSV file</h2></div>
+</div>
+
+<p>The example below helps you to create a javascript spreadsheet table based on a remote CSV file, including the headers.</p>
+
 <div id="spreadsheet1"></div>
- 
-<p><button id='download'>Export my spreadsheet as CSV</button></p>
- 
-<script>
+
+<p><button id='download' class='jbutton dark'>Download Spreadsheet</button></p>
+
+<br><br>
+
+<h3>Source code</h3>
+
+<pre class="prettyprint linenums">
+&#60;html>
+&#60;script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js">&#60;/script>
+&#60;link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
+&#60;script src="https://jsuites.net/v4/jsuites.js">&#60;/script>
+&#60;link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+
+&#60;div id="spreadsheet1">&#60;/div>
+
+&#60;p>&#60;button id='download'>Export my spreadsheet as CSV&#60;/button>&#60;/p>
+
+&#60;script>
 var mySpreadsheet = jspreadsheet(document.getElementById('spreadsheet1'), {
     csv:'/jspreadsheet/arts.csv',
     csvHeaders:true,
@@ -21,9 +260,298 @@ var mySpreadsheet = jspreadsheet(document.getElementById('spreadsheet1'), {
         { type:'text', width:120 },
      ]
 });
- 
+
 document.getElementById('download').onclick = function () {
     mySpreadsheet.download();
 }
+&#60;/script>
+&#60;/html>
+</pre>
+
+<br><br>
+
+<div class="section-divisor">
+    <div class="section-number">2</div> <div class="section-title"><h2>Based on an external JSON file</h2></div>
+</div>
+
+<p>In a similar way, you can create a table based on an external JSON file format by using the <i>url: directive</i> as below.
+
+<div id="spreadsheet2"></div>
+
+<br><br>
+
+<h3>Source code</h3>
+
+<pre class="prettyprint linenums">
+&#60;html>
+&#60;script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js">&#60;/script>
+&#60;link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
+&#60;script src="https://jsuites.net/v4/jsuites.js">&#60;/script>
+&#60;link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+
+&#60;div id="spreadsheet2">&#60;/div>
+
+&#60;script>
+jspreadsheet(document.getElementById('spreadsheet2'), {
+    url: '/v4/test.json',
+    columns: [
+        { type:'text', width:300 },
+        { type:'text', width:100 },
+     ]
+});
+&#60;/script>
+&#60;/html>
+</pre>
+
+
+<br><br><br>
+
+<div class="section-divisor">
+    <div class="section-number">3</div> <div class="section-title"><h2>Based on an JSON object</h2></div>
+</div>
+
+<p>The data directiva can be used to define a JSON object. In this case you can define by the name directive the order of the columns.</p>
+
+<div id="spreadsheet3"></div>
+
+<br><br>
+
+<h3>Source code</h3>
+
+<pre class="prettyprint linenums">
+&#60;html>
+&#60;script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js">&#60;/script>
+&#60;link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
+&#60;script src="https://jsuites.net/v4/jsuites.js">&#60;/script>
+&#60;link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+
+&#60;div id="spreadsheet3">&#60;/div>
+
+&#60;script>
+jspreadsheet(document.getElementById('spreadsheet3'), {
+    data:[
+        {
+            name:'Paulo',
+            id:'3',
+            age:'40',
+            gender:'Male'
+        },
+        {
+            name:'Cosme Sergio',
+            id:'4',
+            age:'48',
+            gender:'Male'
+        },
+        {
+            name:'Jorgina Santos',
+            id:'5',
+            age:'32',
+            gender:'Female'
+        },
+    ],
+    columns: [
+        {
+            type:'text',
+            width:'40',
+            name:'id',
+            title:'Id',
+        },
+        {
+            type:'text',
+            width:'200',
+            name:'name',
+            title:'Name',
+        },
+        {
+            type:'text',
+            width:'100',
+            name:'age',
+            title:'Age',
+        },
+        {
+            type:'hidden',
+            name:'gender'
+        },
+     ]
+});
+&#60;/script>
+&#60;/html>
+</pre>
+
+
+<br><br><br>
+
+<div class="section-divisor">
+    <div class="section-number">4</div> <div class="section-title"><h2>Importing from a XLSX file</h2></div>
+</div>
+
+<p>The following example imports the data from a XLSX file using a thirdy party library, slighly customized in order to improve the CSS parser.</p>
+
+<p style='font-size:0.9em;color:red'>IMPORTANT: This is an experimental implementation and there is no garantee your spreadsheet will be correctly parsed.</p>
+
+<br>
+
+<div id="spreadsheet4"></div>
+
+<br><br>
+
+<h3>Source code</h3>
+
+<pre class="prettyprint linenums">
+&#60;html>
+&#60;script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js">&#60;/script>
+&#60;link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
+&#60;script src="https://jsuites.net/v4/jsuites.js">&#60;/script>
+&#60;link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+
+&#60;script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js">&#60;/script>
+&#60;script src="https://bossanova.uk/jspreadsheet/v3/xlsx.js">&#60;/script>
+
+&#60;div id="spreadsheet4">&#60;/div>
+
+&#60;script>
+jexcel.fromSpreadsheet('https://bossanova.uk/jspreadsheet/v4/list.xlsx', function(result) {
+    if (! result.length) {
+        console.error('JEXCEL: Something went wrong.');
+    } else {
+        if (result.length == 1) {
+            jspreadsheet(document.getElementById('spreadsheet4'), result[0]);
+        } else {
+            jexcel.createTabs(document.getElementById('spreadsheet4'), result);
+        }
+    }
+});
+&#60;/script>
+&#60;/html>
+</pre>
+
+<p><b>NOTE</b>: This example is based on a customized version of the free version of <a href='https://sheetjs.com/'>Sheetjs</a>. There is no garantee in the use of this library. Please consider purchase their professional version.</p>
+
+<br><br>
+
+<script>
+var spreadsheet = null;
+
+document.getElementById('download').onclick = function () {
+    spreadsheet.download();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    spreadsheet = jspreadsheet(document.getElementById('spreadsheet1'), {
+        csv:'/jspreadsheet/arts.csv',
+        csvHeaders:true,
+        tableOverflow:true,
+        columns: [
+            { type:'text', width:300 },
+            { type:'text', width:80 },
+            { type:'dropdown', width:120, source:['England','Wales','Northern Ireland','Scotland'] },
+            { type:'text', width:120 },
+            { type:'text', width:120 },
+         ]
+    });
+
+    table2 = jspreadsheet(document.getElementById('spreadsheet2'), {
+        url:'/jspreadsheet/test.json',
+        columns: [
+            { type:'text', width:300 },
+            { type:'text', width:100 },
+         ]
+    });
+
+
+    table3 = jspreadsheet(document.getElementById('spreadsheet3'), {
+        data:[
+            {
+                name:'Paulo',
+                id:'3',
+                age:'40',
+                gender:'Male'
+            },
+            {
+                name:'Cosme Sergio',
+                id:'4',
+                age:'48',
+                gender:'Male'
+            },
+            {
+                name:'Jorgina Santos',
+                id:'5',
+                age:'32',
+                gender:'Female'
+            },
+        ],
+        columns: [
+            {
+                type:'text',
+                width:'40',
+                name:'id',
+                title:'Id',
+            },
+            {
+                type:'text',
+                width:'200',
+                name:'name',
+                title:'Name',
+            },
+            {
+                type:'text',
+                width:'100',
+                name:'age',
+                title:'Age',
+            },
+            {
+                type:'hidden',
+                name:'gender'
+            },
+         ]
+    });
+
+    jexcel.fromSpreadsheet('/jspreadsheet/list.xlsx', function(result) {
+        if (! result.length) {
+            console.error('JEXCEL: Something went wrong.');
+        } else {
+            if (result.length == 1) {
+                jspreadsheet(document.getElementById('spreadsheet4'), result[0]);
+            } else {
+                jexcel.createTabs(document.getElementById('spreadsheet4'), result);
+            }
+        }
+    });
+});
 </script>
+
+</div>
+</div></div>
+                </div>
+
+        </div>
+    </section>
+
+</div>
+
+<script type="text/javascript" src="https://jsuites.net/v4/jsuites.js"></script>
+<script type="text/javascript" src="https://jsuites.net/v4/jsuites.layout.js"></script>
+<script type="text/javascript" src="https://jsuites.net/v4/jsuites.mobile.js"></script>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100064619-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100064619-1');
+</script>
+
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"f9b5adf8223e3d5a8f575b0bb","lid":"37f97a936c","uniqueMethods":true}) })</script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/themes.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', app);
+</script>
+
+</body>
 </html>
