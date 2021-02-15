@@ -82,3 +82,26 @@ button1.addEventListener('click', function() {
   });
 });
 
+function uploadFile()
+{
+  var url = $("#fileUpload").val();  //gets filename from html input field
+
+  var xhr = (window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP"));
+  xhr.onreadystatechange = XHRhandler;
+  xhr.open("GET", url, true);
+  xhr.send(null);
+
+  function XHRhandler() {
+    if (xhr.readyState == 4) {
+
+      //the raw text from the file
+      var rawText = xhr.responseText;
+      xhr = null;
+      makeDataArray(); //Make a function that uses the rawText 
+                       //and parse out an array for the data portion of the table.
+      makeTable();     //Make a function that renders the table with the data
+    }
+
+  }
+}
+
