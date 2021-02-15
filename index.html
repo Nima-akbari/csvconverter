@@ -10,15 +10,16 @@
  
 <script>
 var mySpreadsheet = jspreadsheet(document.getElementById('spreadsheet1'), {
-    csv:'/jspreadsheet/arts.csv',
+    csv:'/clientsample.csv',
     csvHeaders:true,
     tableOverflow:true,
     columns: [
         { type:'text', width:300 },
         { type:'text', width:80 },
-        { type:'dropdown', width:120, source:['England','Wales','Northern Ireland','Scotland'] },
         { type:'text', width:120 },
         { type:'text', width:120 },
+        { type:'text', width:120 },
+        { type:'text', width:120 }
      ]
 });
  
