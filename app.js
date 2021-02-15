@@ -1,38 +1,45 @@
-var app = (function() {
-    // Controllers
-    var controllers = {}; 
-    // Load menu
-    jSuites.menu(document.getElementById('menu'));
-    // Load page component
-    /*application = jSuites.app(content, {
-        onbeforecreatepage: function(instance, page) {
-            page.options.url = page.options.route; 
-        },
-        oncreatepage: function(instance, page, view) {
-            // Controller is defined
-            if (typeof(controllers[page.options.route]) == 'object') {
-                // Create the lemonade object
-                controllers[page.options.route].self = controllers[page.options.route].controller(obj, page);
-                // Append component 
-                lemonade.blender(view, controllers[page.options.route].self, page);
-                // Cancel default behavior
-                return false;
-            }
-        },
-        onloadpage: function() {
-            PR.prettyPrint();
-        },
-        detachHiddenPages: true,
-    });
+class Jspreadsheet extends HTMLElement {
+  constructor() {
+      super();
+  }
 
-    // Initial onload scripts
-    var script = document.getElementsByTagName('script');
-    // Run possible inline scripts
-    for (var i = 0; i < script.length; i++) {
-        // Get type
-        var type = script[i].getAttribute('type');
-        if (type == 'text/loader') {
-            eval(script[i].text);
-        }
-    }*/
-});
+  init(o) {
+      // Shadow root
+      const shadowRoot = this.attachShadow({mode: 'open'});
+
+      // Style
+      const css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.type = 'text/css'
+      css.href = 'https://bossanova.uk/jexcel/v4/jexcel.css';
+      shadowRoot.appendChild(css);
+
+      const css2 = document.createElement('link');
+      css2.rel = 'stylesheet';
+      css2.type = 'text/css'
+      css2.href = 'https://bossanova.uk/jexcel/v4/jsuites.css';
+      shadowRoot.appendChild(css2);
+
+      // Jexcel container
+      var container = document.createElement('div'); 
+      shadowRoot.appendChild(container);
+
+      // Create element
+      this.el = jexcel(container, {
+          root: shadowRoot,
+          minDimensions: [10,10]
+      });
+  }
+
+  connectedCallback() {
+      this.init(this);
+  }
+
+  disconnectedCallback() {
+  }
+
+  attributeChangedCallback() {
+  }
+}
+
+window.customElements.define('j-spreadsheet', Jspreadsheet);
